@@ -42,7 +42,7 @@ Typical installation time is no more than a few minutes.
 
 ## Demos
 There are 4 separate scripts. Each demo uses manuscript data for reproducibility.
-For all demos, navigate into the main project directory
+For all demos, navigate into the main project directory.
 ```
 cd Semerskyetal_2026
 ```
@@ -112,3 +112,13 @@ chmod +x scripts/refine_metal_pdb.R
 ./scripts/efine_metal_pdb.R data/Fe_Ni_Enzyme_Master_List.xlsx demo4_output.xlsx
 ```
 The output is a .xlsx workbook with two tabs, one for Ni enzymes and one for Fe enzymes.
+
+## Instructions for use on your own data
+The format of each script is listed below. Input files much match the expected format of the demo files
+Required columns for input.xlsx for `refine_metal_pdb.R`:
+- Metal
+- Uniprot
+- EC_numbers
+For `filter_HK_motif.R`:
+- Input must be in FASTA format
+- All sequences must be aligned
