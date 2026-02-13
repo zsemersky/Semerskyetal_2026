@@ -16,7 +16,7 @@ suppressPackageStartupMessages({
 args <- commandArgs(trailingOnly = TRUE)
 
 if (length(args) != 6) {
-  stop("Script usage: Rscript scripts/filter_HK_motif.R <inputMSA.fasta> 
+  stop("Usage: Rscript scripts/filter_HK_motif.R <inputMSA.fasta> 
   <ref_protein_name> <Hpos> <Kpos> <output.fasta> <output.txt>\n",
   "Example: Rscript scripts/filter_HK_motif.R data/AKR_Fig6_MSA.fasta a0a917nhy8 144 200\n",
   "or\n",

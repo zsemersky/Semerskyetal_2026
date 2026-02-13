@@ -21,10 +21,11 @@ library(openxlsx)
 args <- commandArgs(trailingOnly = TRUE)
 
 if (length(args) != 2) {
-  stop("Script usage: pfam_occurrence.R <input.sqlite> <output.xlsx>\n
-       or\n
-       chmod +x scripts/pfam_occurrence.R\n
-       ./scripts/pfam_occurrence.R <input.sqlite> <output.xlsx>")
+  stop("Usage: Rscript scripts/pfam_occurrence.R <input.sqlite> <output.xlsx>\n",
+       "Example: Rscript scripts/pfam_occurrence.R data/LarC_SSN_larBCEnoA.sqlite pfam_output.xlsx\n",
+       "or\n",
+       "chmod +x scripts/pfam_occurrence.R\n",
+       "./scripts/pfam_occurrence.R <input.sqlite> <output.xlsx>")
 }
 
 input_sqlite <- args[1]
