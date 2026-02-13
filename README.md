@@ -61,7 +61,54 @@ alternatively, use
 chmod +x scripts/filter_larC_SSN.R
 ./scripts/filter_larC_SSN.R data/LarC_SSN.sqlite demo1_output.xlsx
 ```
+The output is a .xlsx sheet containing relevent information for each LarC UniProt accession whose surrounding genes include larB and larE but exclude larA.
+
 ### Supplementary Code 2 (`pfam_occurrence.R`)
 _R script for profiling Pfam occurrences_
 
 This script processes a genome neighborhood diagram (.sqlite file) generated with larC as the anchor gene where larBE but not larA are present among the surrounding genes. It generates a table of Pfam occurrences for all neighboring genes of the larC anchor.
+
+Run the following:
+```
+Rscript scripts/pfam_occurrence.R data/LarC_SSN_larBCEnoA.sqlite demo2_output.xlsx
+```
+alternatively, use
+```
+chmod +x scripts/pfam_occurrence.R
+./scripts/pfam_occurrence.R data/LarC_SSN_larBCEnoA.sqlite output2.xlsx
+```
+The output is a .xlsx workbook with two tabs, one has the counts of all pfam occurrences from the .sqlite input file, and the the other tab is the same but excludes occurrences of larBCE.
+
+### Supplementary Code 3 (`filter_HK_motif.R`)
+_R script for annotation of AKRs containing the histidine/lysine motif_
+
+This file takes in an alignment (FASTA FORMAT). By providing the known character positions of NphT H144 and K200 in the alignment, it extracts the UniProt accession numbers of additional sequences containing the histidine/lysine motif.
+
+Run the following:
+```
+Rscript scripts/filter_HK_motif.R data/AKR_Fig6_MSA.fasta a0a917nhy8 144 200 output3.fasta output3_accessions.txt
+```
+alternatively, use
+```
+chmod +x scripts/filter_HK_motif.R
+./scripts/filter_HK_motif.R data/AKR_Fig6_MSA.fasta a0a917nhy8 144 200 demo3_output.fasta demo3_output.txt
+```
+The output contains two files. One is a refined MSA in .fasta format containing enzymes with the HK motif, and the other is a basic list of protein names (in this case, UniProt accession numbers) of enzymes with the HK motif.
+
+### Supplementary Code 4 (`refine_metal_pdb.R`)
+_R script for counting iron and nickel enzymes_
+
+This file takes the spreadsheet of PDB entries containing iron or nickel (.xlsx format) and refines it to retain entries whose corresponding UniProt entry includes the keyword “nickel” or “iron” in the ligand section, also removing duplicate EC numbers to ensure functionally distinct enzymes are counted only once
+
+**NOTE: this script takes 15-20 minutes to run on a MacBook pro with 48 GB of RAM. The bottleneck here is UniProt API requests.**
+
+Run the following:
+```
+Rscript scripts/refine_metal_pdb.R data/Fe_Ni_Enzyme_Master_List.xlsx demo4_output.xlsx
+```
+alternatively, use
+```
+chmod +x scripts/refine_metal_pdb.R
+./scripts/efine_metal_pdb.R data/Fe_Ni_Enzyme_Master_List.xlsx demo4_output.xlsx
+```
+The output is a .xlsx workbook with two tabs, one for Ni enzymes and one for Fe enzymes.
