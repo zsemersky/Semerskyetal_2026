@@ -13,14 +13,15 @@ suppressPackageStartupMessages({
   library(openxlsx)
 })
 
-# ----------------------------
-# Argument parsing
-# ----------------------------
+# Parsing command line arguments ####
 
 args <- commandArgs(trailingOnly = TRUE)
 
 if (length(args) < 2) {
-  stop("Usage: Rscript filter_larC_neighborhood.R <input.sqlite> <output.xlsx>")
+  stop("Script usage: Rscript filter_larC_SSN.R <input.sqlite> <output.xlsx>\n
+       or\n
+       chmod +x scripts/filter_larC_SSN.R\n
+       ./scripts/filter_larC_SSN.R <input.sqlite> <output.xlsx>")
 }
 
 input_sqlite <- args[1]
