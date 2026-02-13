@@ -114,7 +114,7 @@ chmod +x scripts/refine_metal_pdb.R
 The output is a .xlsx workbook with two tabs, one for Ni enzymes and one for Fe enzymes.
 
 ## Instructions for use on your own data
-The format of each script is listed below. Input files much match the expected format of the demo files
+The general format of each script is listed below. Executable format can also be used (see demos). Input files much match the expected format of the demo files.
 Required columns for input.xlsx for `refine_metal_pdb.R`:
 - Metal
 - Uniprot
@@ -122,3 +122,27 @@ Required columns for input.xlsx for `refine_metal_pdb.R`:
 For `filter_HK_motif.R`:
 - Input must be in FASTA format
 - All sequences must be aligned
+
+### Supplementary Code 1 (`filter_larC_SSN.R`)
+A .sqlite file generated from EFI-GND is required for input.
+```
+Rscript scripts/pfam_occurrence.R <input.sqlite> <output.xlsx>
+```
+### Supplementary Code 2 (`pfam_occurrence.R`)
+A .sqlite file generated from EFI-GND is required for input.
+```
+Rscript scripts/pfam_occurrence.R <input.sqlite> <output.xlsx>
+```
+### Supplementary Code 3 (`filter_HK_motif.R`)
+A multiple sequence alignment in .fasta format is required for input.
+```
+Rscript scripts/filter_HK_motif.R <inputMSA.fasta> <reference_protein_name> <H_position> <K_position> <output.fasta> <output.txt>
+```
+- `reference_protein_name` is the name of your desired protein to reference all other sequences to. It is not case sensitive and allows your input to be just part of the name after > in the fasta header.
+- `H_position` is the amino acid number corresponding to the histidine in the HK motif. (i.e. in NphT, it is 144)
+- `K_position` is the amino acid number corresponding to the lysine in the HK motif. (i.e. in NphT, it is 200)
+
+### Supplementary Code 4 (`refine_metal_pdb.R`)
+```
+Rscript scripts/refine_metal_pdb.R <input.xlsx> <output.xlsx>
+```
