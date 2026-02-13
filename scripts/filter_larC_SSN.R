@@ -3,7 +3,7 @@
 # filter_larC_SSN.R
 # This script processes a genome neighborhood diagram (.sqlite file)
 # with larC as the anchor gene, isolating larC accessions whose neighboring 
-# genes include larB and larE but exclude larA
+# genes include larB and larE but exclude larA.
 
 suppressPackageStartupMessages({
   library(RSQLite)
