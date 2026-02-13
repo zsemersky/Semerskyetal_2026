@@ -47,7 +47,7 @@ seq_matrix <- as.matrix(fasta)
 
 # Find reference sequence ####
 # Not case-sensitive, allows for partial match
-ref_idx <- grep(ref_name, names(fasta), ignore.case = TRUE, fixed = TRUE)
+ref_idx <- grep(ref_name, names(fasta), ignore.case = TRUE)
 
 if (length(ref_idx) == 0) {
   stop("Reference protein not found in MSA: ", ref_name)
