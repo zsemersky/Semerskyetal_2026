@@ -86,7 +86,8 @@ pfam_counts_total_bce <- all_pfams_bce %>%
   )
 
 # From tibble of counts of each Pfam with description:
-# removes LarE (PF02540), LarB (PF00731), LarC (PF01969), and Pfam of "none" and sorts in descending order
+# removes LarE (PF02540), LarB (PF00731), LarC (PF01969), and Pfam of "none" and
+# sorts in descending order
 pfam_counts_exclude_bce <- pfam_counts_total_bce %>%
   filter(!family %in% c("PF02540", "PF00731", "PF01969", "none")) %>%
   arrange(desc(n))
