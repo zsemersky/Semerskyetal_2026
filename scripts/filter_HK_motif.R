@@ -58,10 +58,10 @@ if (length(ref_idx) == 0) {
 ref_seq <- fasta[[ref_idx[1]]]
 
 # Map HK positions relative to reference protein sequence ####
-
-ref_chars <- as.character(ref_seq)
-msa_col_H <- which(cumsum(ref_chars != "-") == Hpos) #disregards -
-msa_col_K <- which(cumsum(ref_chars != "-") == Kpos) #disregards -
+ref_chars <- strsplit(as.character(ref_seq), "")[[1]]
+ungapped_idx <- which(ref_chars != "-")
+msa_col_H <- ungapped_idx[Hpos]
+msa_col_K <- ungapped_idx[Kpos]
 
 # Verify residues in reference sequence
 if (ref_chars[msa_col_H] != "H") stop("Reference residue at H position is not H")
