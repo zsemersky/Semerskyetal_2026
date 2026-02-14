@@ -64,4 +64,4 @@ suppressPackageStartupMessages({
   }
 })
 
-message("All required packages installed and loaded.")
+message("All required packages installed and loaded")
