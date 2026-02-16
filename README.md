@@ -5,6 +5,7 @@ Supplementary Code as indicated in the Semersky et al. 2026 manuscript.
 #### Operating system
 Tested on:
 - MacOS Tahoe 26.2
+- Microsoft Windows 10 Pro 10.0.19045
 
 #### Software Requirements
 - R (tested with version 4.5.2)
@@ -14,7 +15,7 @@ Tested on:
 ## Installation guide
 Download this repository as a zip file. On Mac, open 
 
-Run all commands through Terminal (Mac/Linux) or Command Prompt (Windows). 
+Run all commands through Terminal (Mac/Linux) or Command Prompt (Windows; run as administrator). 
 1. Navigate to your desired file destination
 
 Example (Mac/Linux):
@@ -100,7 +101,7 @@ _R script for counting iron and nickel enzymes_
 
 This file takes the spreadsheet of PDB entries containing iron or nickel (.xlsx format) and refines it to retain entries whose corresponding UniProt entry includes the keyword “nickel” or “iron” in the ligand section, also removing duplicate EC numbers to ensure functionally distinct enzymes are counted only once
 
-**NOTE: this script takes 15-20 minutes to run on a MacBook pro with 48 GB of RAM. The bottleneck here is UniProt API requests.**
+**NOTE: When tested, this script took 10-15 minutes to run with 48 GB of RAM, or 20-30 min to run with 16 GB of RAM.**
 
 Run the following:
 ```
