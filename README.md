@@ -12,6 +12,9 @@ Tested on:
 - R packages in scripts/`install_packages.R`
 - Internet connection required for `refine_metal_pdb.R`(UniProt API queries)
 
+#### Hardware Requirements
+- No non-standard hardware required. At least 8 GB of RAM recommended.
+
 ## Installation guide
 Download this repository as a zip file. On Mac, open 
 
