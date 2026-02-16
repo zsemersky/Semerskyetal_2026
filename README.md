@@ -45,8 +45,8 @@ Rscript scripts/install_packages.R
 Typical installation time is no more than a few minutes.
 
 ## Demos
-There are 4 separate scripts. Each demo uses manuscript data for reproducibility.
-For all demos, navigate into the main project directory.
+There are 4 separate scripts. Each demo uses manuscript data for reproducibility. Expected demo results can be found in the demo_results folder.
+To run demos, navigate into the main project directory.
 ```
 cd Semerskyetal_2026
 ```
