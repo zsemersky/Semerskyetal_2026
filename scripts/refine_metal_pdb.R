@@ -22,7 +22,7 @@ args <- commandArgs(trailingOnly = TRUE)
 if (length(args) != 2) {
   stop(
     "Usage: Rscript scripts/refine_metal_pdb.R <input.xlsx> <output.xlsx>\n",
-    "Example: Rscript scripts/refine_metal_pdb.R data/Fe_Ni_Enzyme_Master_List.xlsx Fe_Ni_Enzyme_refined_output.xlsx\n",
+    "Example: Rscript scripts/refine_metal_pdb.R data/Fe_Ni_Enzyme_Master_List.xlsx demo4_output.xlsx\n",
     "or\n",
     "chmod +x scripts/filter_HK_motif.R\n",
     "./scripts/refine_metal_pdb.R <input.xlsx> <output.xlsx>"

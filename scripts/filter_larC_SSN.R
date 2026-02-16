@@ -19,7 +19,7 @@ args <- commandArgs(trailingOnly = TRUE)
 
 if (length(args) != 2) {
   stop("Usage: Rscript scripts/filter_larC_SSN.R <input.sqlite> <output.xlsx>\n",
-       "Example: Rscript scripts/filter_larC_SSN.R data/LarC_SSN.sqlite LarC_SSN_filtered_output.xlsx\n",
+       "Example: Rscript scripts/filter_larC_SSN.R data/LarC_SSN.sqlite demo1_output.xlsx\n",
        "or\n",
        "chmod +x scripts/filter_larC_SSN.R\n",
        "./scripts/filter_larC_SSN.R <input.sqlite> <output.xlsx>")
